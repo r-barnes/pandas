@@ -1560,7 +1560,8 @@ class Index(IndexOpsMixin, PandasObject):
     def is_monotonic_increasing(self) -> bool:
         """
         Return if the index is monotonic increasing (only equal or
-        increasing) values.
+        increasing) values. If the index contains a NaN, this will
+        return false.
 
         Examples
         --------
@@ -1577,7 +1578,8 @@ class Index(IndexOpsMixin, PandasObject):
     def is_monotonic_decreasing(self) -> bool:
         """
         Return if the index is monotonic decreasing (only equal or
-        decreasing) values.
+        decreasing) values. If the index contains a NaN, this will
+        return false.
 
         Examples
         --------
@@ -1594,7 +1596,8 @@ class Index(IndexOpsMixin, PandasObject):
     def _is_strictly_monotonic_increasing(self) -> bool:
         """
         Return if the index is strictly monotonic increasing
-        (only increasing) values.
+        (only increasing) values. If index contains a NaN,
+        this will return false.
 
         Examples
         --------
@@ -1611,7 +1614,8 @@ class Index(IndexOpsMixin, PandasObject):
     def _is_strictly_monotonic_decreasing(self) -> bool:
         """
         Return if the index is strictly monotonic decreasing
-        (only decreasing) values.
+        (only decreasing) values. If index contains a NaN,
+        this will return false.
 
         Examples
         --------
